@@ -1,0 +1,23 @@
+@font-face
+{
+  font-family: 'Sanomat Light';
+  src: url('fonts/SanomatGrabApp-Light.ttf') format('truetype');
+}
+
+body
+{
+  font-family: 'Sanomat Light';
+  font-weight: normal;
+  color: rgb(86,93,106);
+}
+
+a
+{
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+ol, ul
+{
+  list-style-position: initial;
+}

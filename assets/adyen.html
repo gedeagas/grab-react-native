@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Adyen - Create 3D Secure Payment</title>
+</head>
+<body onload="document.getElementById('3dform').submit();">
+<form method="POST" action="${IssuerUrl}" id="3dform">
+    <input type="hidden" name="PaReq" value="${PaReq}" />
+    <input type="hidden" name="MD" value="${MD}" />
+    <input type="hidden" name="TermUrl" value="${TermUrl}" />
+    <noscript>
+        <br>
+        <br>
+        <div style="text-align: center">
+            <h1>Processing your 3-D Secure Transaction</h1>
+            <p>Please click continue to continue the processing of your 3-D Secure transaction.</p>
+            <input type="submit" class="button" value="continue"/>
+        </div>
+    </noscript>
+</form>
+</body>
+</html>
