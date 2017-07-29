@@ -147,7 +147,6 @@ export default class MainView extends Component {
                             }}
                         >
                             <Text style={{
-                                fontFamily: "SanomatGrabApp-Regular",
                                 color:"#484848"
                             }}>
                                 Namba Station 難波駅
@@ -167,7 +166,6 @@ export default class MainView extends Component {
                         >
                             <Text style={{
                                 color:"#464646",
-                                fontFamily: "SanomatGrabApp-LightItalic",
                             }}>
                                 Where Are You Going ?
                             </Text>
@@ -211,7 +209,6 @@ export default class MainView extends Component {
                                         flex:8
                                     }}>
                                         <Text style={{color:"#313541", fontSize:15,
-                                        fontFamily: "SanomatGrabApp-Regular",
                                         }}>GrabCar</Text>
                                     </View>
 
@@ -231,7 +228,6 @@ export default class MainView extends Component {
                         </View>
                         <View style={styles.dropOffButton}>
                             <Text style={{
-                                fontFamily: "SanomatGrabApp-Regular",
                                 color:'#fff',
                                 fontWeight:'400'
                             }}>CHOOSE YOUR DROP-OFF</Text>
