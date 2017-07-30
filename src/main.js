@@ -33,6 +33,7 @@ export default class MainView extends Component {
     constructor(props) {
 		super(props);
 		this.state = {
+            initialRender: true,
             initLoc: {
                 latitude: 34.662496,
                 longitude: 135.503177,
@@ -114,7 +115,10 @@ export default class MainView extends Component {
                         <MapView.Marker
                         coordinate={marker.latlng}
                         >
-                            <Image style={{zIndex:2, width: 25, height: 53}} source={require('./assets/ic_grabcar.png')}/>
+                            <Image style={{zIndex:2, width: 25, height: 53}} source={require('./assets/ic_grabcar.png')}
+                             onLayout={() => this.setState({ initialRender: false })}
+                             key={`${this.state.initialRender}`}
+                            />
                         </MapView.Marker>
 
                     ))}
@@ -123,10 +127,11 @@ export default class MainView extends Component {
 
                   
                 </MapView>
-
+                <View style={styles.iosOnlyTopBar}/>
                 <View style={styles.topBarContainer}>
 
                 </View>
+                
 
                 <View style={styles.homePickerContainer}>
                     <View style={{
@@ -249,6 +254,9 @@ const styles = StyleSheet.create({
 
     },
     bottomContainer:{
+        flex:1,
+                zIndex:2,
+
         position: 'absolute',
         ...Platform.select({
         ios: {
@@ -270,10 +278,22 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
+    iosOnlyTopBar:{
+        backgroundColor: '#00B140',
+        zIndex:2,
+        ...Platform.select({
+        ios: {
+            height: 20,
+        },
+        android: {
+            height: 0,
+        },
+        }),
+    },
     topBarContainer:{
         backgroundColor: '#00B140',
-        height: 59,
         zIndex:2,
+        height: 59,
 
 
     },

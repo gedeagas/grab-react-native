@@ -39,7 +39,7 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -52,16 +52,6 @@
 		</dict>
 	</dict>
 	<key>UIAppFonts</key>
-	<array>
-		<string>NotoSansMyanmar-Bold.ttf</string>
-		<string>NotoSansMyanmar-Regular.ttf</string>
-		<string>Roboto-Medium.ttf</string>
-		<string>SanomatGrabApp-Light.ttf</string>
-		<string>SanomatGrabApp-LightItalic.ttf</string>
-		<string>SanomatGrabApp-Medium.ttf</string>
-		<string>SanomatGrabApp-Regular.ttf</string>
-		<string>VehicleNumberPlateFont.ttf</string>
-		<string>ZawgyiOne.ttf</string>
-	</array>
+	<array/>
 </dict>
 </plist>
