@@ -14,7 +14,10 @@ import {
     TouchableOpacity,
     Platform
 } from "react-native";
+
 import MapView from 'react-native-maps';
+import Icon from 'react-native-vector-icons/Entypo';
+
 
 import {
   StackNavigator,
@@ -34,6 +37,7 @@ export default class MainView extends Component {
 		super(props);
 		this.state = {
             initialRender: true,
+            topHomePickerToggle: false,
             initLoc: {
                 latitude: 34.662496,
                 longitude: 135.503177,
@@ -73,6 +77,55 @@ export default class MainView extends Component {
         console.disableYellowBox = true;
 
     }
+
+
+    funcTopHomePickerButton() {
+        this.setState({ topHomePickerToggle: !this.state.topHomePickerToggle })
+    }
+    _renderTopHomePicker() {
+        if (this.state.topHomePickerToggle === true) {
+            return (
+                <View
+                style={{
+                    zIndex:5,
+                    ...Platform.select({
+                    ios: {
+                        top: 79,
+                        height:height-79,
+                    },
+                    android: {
+                        top: 59,
+                                                height:height-79,
+
+                    },
+                    }),
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    width:width,
+                    position: 'absolute',
+
+                }}
+                >
+                    <View
+                    style={{
+                        margin:11,
+                        height:105,
+                        backgroundColor:'#fff',
+                        alignItems:'center',
+                        justifyContent:'center'
+                    }}
+                    >
+                        
+                        <Image style={{width: 295, height: 58}} source={require('./assets/cheat.png')}/>
+
+
+                    </View>
+                </View>
+            );
+        } else {
+            return null;
+        }
+    }
+
     render() {
 		return (
             <View style={styles.container}>
@@ -129,9 +182,47 @@ export default class MainView extends Component {
                 </MapView>
                 <View style={styles.iosOnlyTopBar}/>
                 <View style={styles.topBarContainer}>
+                    <View
+                    style={{
+                        marginLeft:21,
+                        width:16,
+                        height:12,
+                        justifyContent:"space-around"
+                    }}>
+                        <View style={{height:2, backgroundColor:'#fff'}} />
+                        <View style={{height:2, backgroundColor:'#fff'}} />
+                        <View style={{height:2, backgroundColor:'#fff'}} />
 
+
+                    </View>
+
+                    <TouchableOpacity
+                    style={{
+                        marginLeft:(width/2)-90,
+                        width:104,
+                        height:38,
+                        borderRadius:3,
+                        backgroundColor:'#3CBF6A',
+                        alignItems:'center',
+                        justifyContent:'center'
+                    }}
+                    onPress={this.funcTopHomePickerButton.bind(this)}
+                    >
+                        <View
+                        style={{
+                            flexDirection:"row",
+                            alignItems:"center"
+                        }}
+                        >
+                            <Text style={{fontWeight:'400',color:'#fff'}}>Transport</Text>
+                            <View style={{marginLeft:6}}>
+                            <Icon name="chevron-down" size={14} color="#fff" />
+                            </View>
+
+                        </View>
+                    </TouchableOpacity>
                 </View>
-                
+                {this._renderTopHomePicker()}
 
                 <View style={styles.homePickerContainer}>
                     <View style={{
@@ -294,6 +385,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#00B140',
         zIndex:2,
         height: 59,
+        flexDirection:'row',
+        alignItems: 'center',
 
 
     },
