@@ -3,8 +3,6 @@ Grab User Interface on React Native.
 
 Grab is an automated smartphone based booking and dispatch platform. It matches passengers with drivers for transport by taxis, cars and bikes.
 
+**DISCLAIMER**
 
-
-グラブユーザーインターフェイス
-
-グラブは、自動スマートフォンベースの予約と発送プラットフォームです。それはタクシー、車、自転車で乗り物に乗る乗客に合っています。
+Please do not use this project for your own products or apps because all of the icons, font, and layout is property of Grab. You can use this project for learning purposes only.
