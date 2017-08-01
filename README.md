@@ -1,3 +1,5 @@
+<img align="right" width="200" src="https://vignette4.wikia.nocookie.net/logopedia/images/d/dd/Grab_logo.png/revision/latest?cb=20160204065717" />
+
 # grab-react-native
 Grab User Interface on React Native.
 
